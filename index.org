@@ -58,8 +58,6 @@
 ;;(org-publish-project "hw-music-sheet")
 #+end_src
 
-#+begin_src sh :results output silient
+#+begin_src sh :results output silent
 lilypond --svg *.ly
 #+end_src
-
-#+RESULTS:
