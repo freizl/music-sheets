@@ -1,0 +1,6 @@
+#+title: Music Sheets
+
+- [[file:ode-to-joy.svg][Ody to Joy]]
+
+* TODO Auto generate list :noexport:
+ - try to write elisp function that generate the list
