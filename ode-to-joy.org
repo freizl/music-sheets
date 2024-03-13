@@ -1,6 +1,6 @@
 #+title: Ode To Joy
 
-#+begin_src lilypond :comments no
+#+begin_src lilypond
 \version "2.24.3"
 
 \header {
