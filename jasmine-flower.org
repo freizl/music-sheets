@@ -1,5 +1,5 @@
 #+begin_src lilypond
-\version "2.24.3"
+\include "config.lilypond"
 
 \header {
   title = "茉莉花"

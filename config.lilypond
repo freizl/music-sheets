@@ -1,0 +1,13 @@
+ % config.ly
+
+ % Paper size and formatting
+ \paper {
+   #(set-paper-size "a4")
+   tagline = ##f % Removes the footer
+ }
+
+ % Global score settings
+ global = {
+ }
+
+ \version "2.24.3"
