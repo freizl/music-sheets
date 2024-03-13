@@ -57,3 +57,9 @@
 (insert-org-files-after-title-clean)
 ;;(org-publish-project "hw-music-sheet")
 #+end_src
+
+#+begin_src sh :results output silient
+lilypond --svg *.ly
+#+end_src
+
+#+RESULTS:
