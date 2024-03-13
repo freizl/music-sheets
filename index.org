@@ -1,6 +1,59 @@
 #+title: Music Sheets
 
-- [[file:ode-to-joy.svg][Ody to Joy]]
+- [[file:jasmine-flower.svg][Jasmine Flower]]
+- [[file:ode-to-joy.svg][Ode To Joy]]
 
-* TODO Auto generate list :noexport:
- - try to write elisp function that generate the list
+* Help :noexport:
+#+begin_src elisp
+(defun titleize (str)
+  "Capitalize the first character of each word in STR."
+  (mapconcat 'capitalize (split-string str) " "))
+
+(defun insert-org-files-after-title-clean ()
+  (let ((directory (if (buffer-file-name)
+                        (file-name-directory (buffer-file-name))
+                      default-directory))
+        (files (directory-files-recursively directory "\\.svg$"))
+        start end)
+
+    ;; Find the #+title: line and set the start point.
+    (goto-char (point-min))
+    (when (re-search-forward "^#\\+title:.*" nil t)
+      ;; Move to the next line after #+title to set start point.
+      (forward-line 1)
+      (setq start (point)))
+
+    ;; Find the "* Help" section and set the end point.
+    (goto-char (point-min))
+    (when (re-search-forward "^\\*+ Help" nil t)
+      (setq end (match-beginning 0))
+      ;; Move one line back so we don't delete the Help heading itself.
+      (previous-line))
+
+    ;; Clean the region if both start and end are set.
+    (when (and start end)
+      (delete-region start end)
+      ;; Move back to start point to begin inserting files.
+      (goto-char start))
+
+    ;; Insert the list of .org files.
+    (setq files (sort files (lambda (f1 f2)
+                              (string< (downcase (file-name-base f1))
+                                       (downcase (file-name-base f2))))))
+    (insert "\n")
+    (dolist (file files)
+      (let* ((relative-path (file-relative-name file directory))
+             (base-name (file-name-base relative-path))
+             (name-with-spaces (replace-regexp-in-string "-" " " base-name))
+             (formatted-name (titleize name-with-spaces)))
+        (insert (format "- [[file:%s][%s]]"
+                        relative-path
+                        formatted-name)))
+      ;; Insert a newline after the list if Help section exists to separate content.
+      (when end (insert "\n")))
+      (insert "\n")
+    ))
+
+(insert-org-files-after-title-clean)
+;;(org-publish-project "hw-music-sheet")
+#+end_src
