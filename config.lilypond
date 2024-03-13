@@ -1,13 +1,14 @@
- % config.ly
+% config.ly
 
- % Paper size and formatting
- \paper {
-   #(set-paper-size "a4")
-   tagline = ##f % Removes the footer
- }
- \pointAndClickOff
+#(set-global-staff-size 30)
 
- % Global score settings
- global = {
- }
+% Paper size and formatting
+\paper {
+  #(set-paper-size "a4")
+  tagline = ##f % Removes the footer
+}
+\pointAndClickOff
 
+% Global score settings
+global = {
+}

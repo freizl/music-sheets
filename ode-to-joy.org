@@ -4,48 +4,48 @@
 
 \header {
   title = "Ode to Joy"
-  composer = "Ludwig van Beethoven"
+  composer = "Beethoven"
 }
 
 \relative c' {
   d4 d e c |
   d4 e8( f8) e4 c4 |
   d4 e8( f8) e4 d4 |
-  c4 d g2 |
+  c4 d g,2 |
   \break
 
-  e4 e f g |
+  e'4 e f g |
   g f e d |
   c c d e |
-  d c c2 \bar ".|:"
+  d4. c8 c2 \bar ".|:"
   \break
 
   e4 e f g |
   g4 f e d |
   c4 c d e |
-  e4 d d2 |
+  e4. d8 d2 |
+  \break
+
+  e4 e f g |
+  g4 f e d |
+  c4 c d e |
+  c4. d8 g2 |
   \break
 
   d4 d e c |
   d4 e8( f8) e4 c4 |
   d4 e8( f8) e4 d4 |
-  c4 d g2 |
-  \break
+  c4 d g,2 |
 
-  e4 e f g |
+  e'4 e f g |
   g f e d |
   c c d e |
-  d4 c c2 |
-
-  e4 e f g |
-  g f e d |
-  c c d e |
-  d c c2 \bar ":|."
+  d4. c8 c2 \bar ":|."
 }
 
 \addlyrics {
   "2" "2" "3" "1" |
-  "2" "34" "3" "1" |
+  "2" "3⋅4" "3" "1" |
   "2" "34" "3" "2" |
   "1" "2" "5" |
 
@@ -65,8 +65,8 @@
   "2" "1" "1"
 
   "2" "2" "3" "1" |
-  "2" "34" "3" "1" |
-  "2" "34" "3" "2" |
+  "2" "3⋅4" "3" "1" |
+  "2" "3⋅4" "3" "2" |
   "1" "2" "5" |
 
   "3" "3" "4" "5" |
