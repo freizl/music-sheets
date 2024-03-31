@@ -1,7 +1,9 @@
 #+title: Music Sheets
+#+OPTIONS: author:nil timestamp:nil
 
 - [[file:jasmine-flower.svg][Jasmine Flower]]
 - [[file:ode-to-joy.svg][Ode To Joy]]
+- [[file:misc.svg][Misc]]
 
 * Help :noexport:
 #+begin_src elisp

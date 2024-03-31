@@ -1,0 +1,68 @@
+#+begin_src lilypond
+\version "2.24.3"
+\include "config.lilypond"
+
+\header {
+  title = "Unknown"
+}
+
+\relative {
+  \time 2/4
+  \tempo "Moderato"
+
+  g'8 g e e |
+  g8 g e e |
+  d e e d |
+  c2 |
+  \break
+
+  a'8 a f f |
+  a8 a f f |
+  e g g e |
+  e2 |
+  \break
+
+  c8 c8 c4 |
+  c8 c a c |
+  f8 f f g |
+  a2 |
+  \break
+
+  b8 b8 a4 |
+  g8 g f f |
+  e d e f |
+  g2 |
+  \break
+
+  b8 b8 a4 |
+  g8 g f f |
+  e8 e d d |
+  c2 |
+  \break
+}
+
+\addlyrics {
+
+  "5" "5" "3" "3" |
+  "5" "5" "3" "3" |
+  "2" "3" "3" "2" |
+  "1" |
+
+  "6" "6" "4" "4" |
+  "6" "6" "4" "4" |
+  "3" "5" "5" "3" |
+  "2" |
+  "1" "1" "1" |
+  "1" "1" "6" "1" |
+  "4" "4" "4" "5" |
+  "6" |
+  "7" "7" "6" |
+  "5" "5" "4" "4" |
+  "3" "2" "3" "4" |
+  "5" |
+  "7" "7" "6" |
+  "5" "5" "4" "4" |
+  "3" "3" "2" "2" |
+  "1" |
+}
+#+end_src
