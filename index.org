@@ -1,33 +1,33 @@
 #+title: Music Sheets
-#+OPTIONS: author:nil timestamp:nil
+#+options: author:nil timestamp:nil
 
 - [[file:src/jasmine-flower.svg][Jasmine Flower]]
 - [[file:src/ode-to-joy.svg][Ode To Joy]]
-- [[file:src/misc.svg][Misc]]
+- [[file:src/practice-1.svg][Practice 1]]
 
-* Help :noexport:
-#+begin_src elisp
+* Update list for index :noexport:
+#+begin_src elisp :results output silent
 (defun titleize (str)
   "Capitalize the first character of each word in STR."
   (mapconcat 'capitalize (split-string str) " "))
 
 (defun insert-org-files-after-title-clean ()
-  (let ((directory (if (buffer-file-name)
+  (let* ((directory (if (buffer-file-name)
                         (file-name-directory (buffer-file-name))
                       default-directory))
-        (files (directory-files-recursively directory "\\.svg$"))
-        start end)
+         (files (directory-files-recursively (expand-file-name "src/" directory ) "\\.svg$"))
+         start end)
 
     ;; Find the #+title: line and set the start point.
     (goto-char (point-min))
-    (when (re-search-forward "^#\\+title:.*" nil t)
+    (when (re-search-forward "^#\\+options:.*" nil t)
       ;; Move to the next line after #+title to set start point.
       (forward-line 1)
       (setq start (point)))
 
     ;; Find the "* Help" section and set the end point.
     (goto-char (point-min))
-    (when (re-search-forward "^\\*+ Help" nil t)
+    (when (re-search-forward "^\\* Help" nil t)
       (setq end (match-beginning 0))
       ;; Move one line back so we don't delete the Help heading itself.
       (previous-line))
@@ -51,14 +51,16 @@
         (insert (format "- [[file:%s][%s]]"
                         relative-path
                         formatted-name)))
-      ;; Insert a newline after the list if Help section exists to separate content.
       (when end (insert "\n")))
-      (insert "\n")
+    (insert "\n")
+    (goto-char end)
+    (forward-line 1)
     ))
 
 (insert-org-files-after-title-clean)
-;;(org-publish-project "hw-music-sheet")
 #+end_src
+
+* Regenerate svg files :noexport:
 
 #+begin_src sh :results output silent
 pushd src
