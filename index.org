@@ -2,8 +2,8 @@
 #+options: author:nil timestamp:nil
 
 - [[file:src/jasmine-flower.svg][Jasmine Flower]]
+- [[file:src/little-duck.svg][Little Duck]]
 - [[file:src/ode-to-joy.svg][Ode To Joy]]
-- [[file:src/practice-1.svg][Practice 1]]
 
 * Update list for index :noexport:
 #+begin_src elisp :results output silent
@@ -20,14 +20,12 @@
 
     ;; Find the #+title: line and set the start point.
     (goto-char (point-min))
-    (when (re-search-forward "^#\\+options:.*" nil t)
-      ;; Move to the next line after #+title to set start point.
-      (forward-line 1)
-      (setq start (point)))
+    (forward-line 2)
+    (setq start (point))
 
     ;; Find the "* Help" section and set the end point.
     (goto-char (point-min))
-    (when (re-search-forward "^\\* Help" nil t)
+    (when (re-search-forward "^\\* Update" nil t)
       (setq end (match-beginning 0))
       ;; Move one line back so we don't delete the Help heading itself.
       (previous-line))

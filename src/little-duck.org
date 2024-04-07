@@ -3,7 +3,7 @@
 \include "config.lilypond"
 
 \header {
-  title = "Practice 1"
+  title = "小鴨子"
 }
 
 \relative {
