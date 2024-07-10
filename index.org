@@ -2,6 +2,7 @@
 #+options: author:nil timestamp:nil
 
 - [[file:src/jasmine-flower.svg][Jasmine Flower]]
+- [[file:src/john-kanaka.svg][John Kanaka]]
 - [[file:src/little-duck.svg][Little Duck]]
 - [[file:src/ode-to-joy.svg][Ode To Joy]]
 
