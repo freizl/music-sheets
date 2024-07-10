@@ -1,0 +1,56 @@
+% [[file:john-kanaka.org::+begin_src lilypond][No heading:1]]
+\version "2.24.3"
+\include "config.lilypond"
+
+\header {
+  title = "John Kanaka"
+}
+
+\relative c' {
+  \clef treble
+  \key c \major
+  \time 4/4
+
+  \repeat volta 2 {
+    g4 g g a | g2 r2 |
+    g4 g g a | f2 r2 |
+    g4 g g f | f2 r2 |
+    f4 f f g | e2 r2 |
+  }
+
+  \repeat volta 2 {
+    e4 g a g | f g e r |
+    e4 g a g | f g e r |
+  }
+
+  \repeat volta 2 {
+    g4 g g a | g2 r2 |
+    g4 g g a | f2 r2 |
+    g4 g g f | f2 r2 |
+    f4 f f g | e2 r2 |
+  }
+
+  e4 g a g | f g e r |
+  e4 g a g | f g e r \bar "|."
+}
+
+\addlyrics {
+  John Ka -- na -- ka -- na, tu -- lie -- o, |
+  John Ka -- na -- ka -- na, tu -- lie -- o. |
+  To -- mor -- row we will work, but not to -- day, |
+  John Ka -- na -- ka -- na, tu -- lie -- o. |
+
+  John Ka -- na -- ka -- na, tu -- lie -- o, |
+  John Ka -- na -- ka -- na, tu -- lie -- o. |
+  To -- mor -- row we will work, but not to -- day, |
+  John Ka -- na -- ka -- na, tu -- lie -- o. |
+
+  John Ka -- na -- ka -- na, tu -- lie -- o, |
+  John Ka -- na -- ka -- na, tu -- lie -- o. |
+  To -- mor -- row we will work, but not to -- day, |
+  John Ka -- na -- ka -- na, tu -- lie -- o. |
+
+  To -- mor -- row we will work, but not to -- day, |
+  To -- mor -- row we will work, but not to -- day. \bar "|."
+}
+% No heading:1 ends here
